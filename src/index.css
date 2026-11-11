@@ -2385,14 +2385,48 @@ code {
   position: relative;
 }
 
+.camera-video-container,
 .camera-video-mock {
-  height: 220px;
+  height: 240px;
   background: #020617;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+.scanner-live-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.scanner-live-video.hidden {
+  display: none;
+}
+
+.camera-state-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #E2E8F0;
+  padding: 16px;
+  text-align: center;
+  z-index: 3;
+  font-size: 13px;
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: var(--radius-md);
+  max-width: 90%;
+}
+
+.camera-state-overlay.error {
+  color: #F87171;
 }
 
 .scanner-laser-line {

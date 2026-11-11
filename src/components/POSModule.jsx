@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import {
   Search,
   ShoppingCart,
@@ -15,6 +15,7 @@ import {
   ArrowRight,
   ScanBarcode,
   Camera,
+  CameraOff,
   SwitchCamera,
   MessageSquare,
   Send,
@@ -44,10 +45,104 @@ export default function POSModule() {
   const [manualBarcode, setManualBarcode] = useState('');
   const [scannerStatus, setScannerStatus] = useState('Siap memindai barcode');
   const [cameraFacing, setCameraFacing] = useState('Belakang (Utama)');
+  const [isCameraLoading, setIsCameraLoading] = useState(false);
+  const [cameraError, setCameraError] = useState(null);
+  const videoRef = useRef(null);
+  const lastScannedTimeRef = useRef(0);
 
   // Receipt WhatsApp Simulation State
   const [waCustomerPhone, setWaCustomerPhone] = useState('0856-7890-1234');
   const [waReceiptSent, setWaReceiptSent] = useState(false);
+
+  // Real Camera Lifecycle Effect
+  useEffect(() => {
+    if (!isScannerOpen) {
+      return;
+    }
+
+    let activeStream = null;
+    let detectInterval = null;
+
+    const startCamera = async () => {
+      try {
+        setIsCameraLoading(true);
+        setCameraError(null);
+
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+          throw new Error('Akses kamera tidak didukung peramban atau protokol bukan HTTPS');
+        }
+
+        const constraints = {
+          video: {
+            facingMode: cameraFacing.includes('Belakang') ? { ideal: 'environment' } : 'user',
+            width: { ideal: 1280 },
+            height: { ideal: 720 }
+          },
+          audio: false
+        };
+
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        activeStream = stream;
+
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+          try {
+            await videoRef.current.play();
+          } catch (e) {
+            // play caught
+          }
+        }
+
+        setIsCameraLoading(false);
+        setScannerStatus('Kamera aktif • Arahkan barcode ke kotak pemindai');
+
+        // Otomatis Deteksi Barcode jika peramban mendukung BarcodeDetector API (Chrome/Edge/Android)
+        if ('BarcodeDetector' in window) {
+          try {
+            const detector = new window.BarcodeDetector({
+              formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e', 'code_128', 'qr_code']
+            });
+
+            detectInterval = setInterval(async () => {
+              if (videoRef.current && videoRef.current.readyState === 4) {
+                try {
+                  const detected = await detector.detect(videoRef.current);
+                  if (detected && detected.length > 0) {
+                    const now = Date.now();
+                    if (now - lastScannedTimeRef.current > 2000) {
+                      lastScannedTimeRef.current = now;
+                      const rawCode = detected[0].rawValue;
+                      if (rawCode) {
+                        handleScanBarcode(rawCode);
+                      }
+                    }
+                  }
+                } catch (detErr) {
+                  // ignore frame error
+                }
+              }
+            }, 300);
+          } catch (initErr) {
+            console.warn('BarcodeDetector not available:', initErr);
+          }
+        }
+      } catch (err) {
+        console.warn('Camera error:', err);
+        setIsCameraLoading(false);
+        setCameraError('Kamera tidak aktif / izin belum diberikan. Silakan gunakan tombol simulasi barcode di bawah atau izinkan kamera di browser.');
+        setScannerStatus('Kamera tidak aktif • Silakan gunakan tombol sampel barcode di bawah');
+      }
+    };
+
+    startCamera();
+
+    return () => {
+      if (detectInterval) clearInterval(detectInterval);
+      if (activeStream) {
+        activeStream.getTracks().forEach(t => t.stop());
+      }
+    };
+  }, [isScannerOpen, cameraFacing]);
 
   // Web Audio API Synthesizer Beep Feedback
   const playBeep = () => {
@@ -596,11 +691,40 @@ export default function POSModule() {
             </div>
 
             <div className="modal-body">
-              {/* Camera Viewport Simulation */}
+              {/* Live Camera Viewport */}
               <div className="camera-viewfinder-box">
-                <div className="camera-video-mock">
+                <div className="camera-video-container">
+                  {/* Live Video Feed */}
+                  <video
+                    ref={videoRef}
+                    autoPlay
+                    playsInline
+                    muted
+                    className={`scanner-live-video ${cameraError || isCameraLoading ? 'hidden' : ''}`}
+                  />
+
+                  {/* Loading State Overlay */}
+                  {isCameraLoading && (
+                    <div className="camera-state-overlay">
+                      <RotateCcw className="spin text-blue mb-2" size={24} />
+                      <span>Menghubungkan ke kamera peramban...</span>
+                    </div>
+                  )}
+
+                  {/* Error / Permission State Overlay */}
+                  {cameraError && !isCameraLoading && (
+                    <div className="camera-state-overlay error">
+                      <CameraOff size={30} className="text-warning mb-2" />
+                      <span className="font-semibold">{cameraError}</span>
+                      <span className="text-xs text-muted mt-1 px-4">
+                        (Jika kamera laptop/HP tidak aktif, gunakan tombol sampel barcode di bawah)
+                      </span>
+                    </div>
+                  )}
+
                   {/* Glowing Laser Scan Line Animation */}
                   <div className="scanner-laser-line"></div>
+
                   {/* Viewfinder Target Reticle Frame */}
                   <div className="scanner-reticle-box">
                     <span className="reticle-corner top-left"></span>
@@ -608,9 +732,10 @@ export default function POSModule() {
                     <span className="reticle-corner bottom-left"></span>
                     <span className="reticle-corner bottom-right"></span>
                   </div>
+
                   <div className="camera-overlay-info">
-                    <Camera size={16} />
-                    <span>Arahkan kamera HP / Webcam ke barcode produk</span>
+                    <Camera size={14} />
+                    <span>Arahkan kamera ke barcode produk</span>
                   </div>
                 </div>
 
