@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #172554; }
+      .subtitle { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; fill: #64748B; }
+      .node-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; font-weight: 600; text-anchor: middle; }
+      .edge-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #475569; }
+      .pill { rx: 25; ry: 25; fill: #1E3A8A; stroke: #172554; stroke-width: 2; }
+      .box { rx: 8; ry: 8; fill: #FFFFFF; stroke: #2563EB; stroke-width: 2; }
+      .box-success { rx: 8; ry: 8; fill: #F0FDF4; stroke: #16A34A; stroke-width: 2; }
+      .diamond { fill: #FEF3C7; stroke: #D97706; stroke-width: 2; }
+      .arrow { stroke: #64748B; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#64748B" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1200" fill="#F8FAFC" rx="16" />
+
+  <!-- Title -->
+  <text x="500" y="45" text-anchor="middle" class="title">FLOWCHART: ALUR TRANSAKSI KASIR &amp; HYBRID BARCODE</text>
+  <text x="500" y="70" text-anchor="middle" class="subtitle">Sistem Informasi POS Warung Klontong Haji Lubis</text>
+
+  <!-- Nodes -->
+  <!-- 1. Start -->
+  <rect x="400" y="100" width="200" height="50" class="pill" />
+  <text x="500" y="131" class="node-text" fill="#FFFFFF">Mulai Transaksi Kasir</text>
+
+  <line x1="500" y1="150" x2="500" y2="190" class="arrow" />
+
+  <!-- 2. Buka Modul POS -->
+  <rect x="380" y="190" width="240" height="55" class="box" />
+  <text x="500" y="215" class="node-text" fill="#172554">Buka Halaman Kasir / POS</text>
+  <text x="500" y="233" class="node-text" fill="#64748B" font-size="11px">(Katalog &amp; Keranjang Belanja)</text>
+
+  <line x1="500" y1="245" x2="500" y2="290" class="arrow" />
+
+  <!-- 3. Pilih Metode Input -->
+  <polygon points="500,290 660,345 500,400 340,345" class="diamond" />
+  <text x="500" y="340" class="node-text" fill="#92400E">Pilih Metode Input</text>
+  <text x="500" y="358" class="node-text" fill="#92400E">Produk Belanja?</text>
+
+  <!-- Branches from Diamond -->
+  <!-- Left: Scan Kamera -->
+  <line x1="340" y1="345" x2="220" y2="345" class="arrow" />
+  <text x="245" y="335" class="edge-text">Produk Kemasan Pabrik</text>
+
+  <rect x="100" y="390" width="240" height="60" class="box" />
+  <text x="220" y="415" class="node-text" fill="#1E40AF">Scan Barcode Kamera</text>
+  <text x="220" y="433" class="node-text" fill="#64748B" font-size="11px">(Kamera HP / Webcam / Beep)</text>
+
+  <!-- Right: Cari Manual -->
+  <line x1="660" y1="345" x2="780" y2="345" class="arrow" />
+  <text x="755" y="335" class="edge-text">Produk Curah / Eceran</text>
+
+  <rect x="660" y="390" width="240" height="60" class="box" />
+  <text x="780" y="415" class="node-text" fill="#1E40AF">Pencarian / Sentuh Kartu</text>
+  <text x="780" y="433" class="node-text" fill="#64748B" font-size="11px">(Ketik Nama / Filter Kategori)</text>
+
+  <!-- Reconnect to Check Stock -->
+  <line x1="220" y1="450" x2="220" y2="490" class="arrow" />
+  <line x1="780" y1="450" x2="780" y2="490" class="arrow" />
+  <line x1="220" y1="490" x2="400" y2="530" class="arrow" />
+  <line x1="780" y1="490" x2="600" y2="530" class="arrow" />
+
+  <!-- 4. Validasi Stok -->
+  <polygon points="500,500 640,545 500,590 360,545" class="diamond" />
+  <text x="500" y="540" class="node-text" fill="#92400E">Cek Ketersediaan</text>
+  <text x="500" y="558" class="node-text" fill="#92400E">Stok &gt; 0?</text>
+
+  <!-- Stock Habis Branch -->
+  <line x1="640" y1="545" x2="880" y2="545" class="arrow" />
+  <text x="720" y="535" class="edge-text">Stok Habis (Tidak)</text>
+  <rect x="880" y="520" width="100" height="50" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" />
+  <text x="930" y="550" class="node-text" fill="#991B1B" font-size="11px">Alert Habis</text>
+
+  <!-- Stock Ada Branch -->
+  <line x1="500" y1="590" x2="500" y2="640" class="arrow" />
+  <text x="510" y="615" class="edge-text">Stok Cukup (Ya)</text>
+
+  <!-- 5. Tambah ke Keranjang -->
+  <rect x="370" y="640" width="260" height="55" class="box" />
+  <text x="500" y="665" class="node-text" fill="#1E40AF">Masuk Keranjang (+1)</text>
+  <text x="500" y="683" class="node-text" fill="#64748B" font-size="11px">Hitung Otomatis Total Belanja</text>
+
+  <line x1="500" y1="695" x2="500" y2="745" class="arrow" />
+
+  <!-- 6. Input Pembayaran -->
+  <rect x="360" y="745" width="280" height="55" class="box" />
+  <text x="500" y="770" class="node-text" fill="#172554">Input Uang Pembayaran (Tunai)</text>
+  <text x="500" y="788" class="node-text" fill="#64748B" font-size="11px">(Tombol Nominal Cepat / Uang Pas)</text>
+
+  <line x1="500" y1="800" x2="500" y2="850" class="arrow" />
+
+  <!-- 7. Validasi Pembayaran -->
+  <polygon points="500,850 650,895 500,940 350,895" class="diamond" />
+  <text x="500" y="890" class="node-text" fill="#92400E">Uang Bayar</text>
+  <text x="500" y="908" class="node-text" fill="#92400E">&gt;= Total Belanja?</text>
+
+  <!-- Bayar Kurang Branch -->
+  <line x1="350" y1="895" x2="180" y2="895" class="arrow" />
+  <text x="210" y="885" class="edge-text">Kurang (Salah)</text>
+  <rect x="60" y="870" width="120" height="50" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" />
+  <text x="120" y="900" class="node-text" fill="#991B1B" font-size="11px">Hitung Kurang</text>
+
+  <!-- Bayar Cukup Branch -->
+  <line x1="500" y1="940" x2="500" y2="990" class="arrow" />
+  <text x="510" y="965" class="edge-text">Cukup (Selesai)</text>
+
+  <!-- 8. Checkout & Otomasi -->
+  <rect x="340" y="990" width="320" height="65" class="box-success" />
+  <text x="500" y="1015" class="node-text" fill="#14532D">1. Potong Stok Produk Otomatis</text>
+  <text x="500" y="1033" class="node-text" fill="#14532D">2. Catat Mutasi Stok &amp; Riwayat Transaksi</text>
+  <text x="500" y="1048" class="node-text" fill="#15803D" font-size="11px">3. Tampilkan Popup Struk Belanja Kasir</text>
+
+  <line x1="500" y1="1055" x2="500" y2="1095" class="arrow" />
+
+  <!-- 9. Struk WhatsApp & Selesai -->
+  <rect x="360" y="1095" width="280" height="45" class="box" />
+  <text x="500" y="1123" class="node-text" fill="#1E40AF">Kirim Struk Digital WhatsApp (Opsional)</text>
+
+  <line x1="500" y1="1140" x2="500" y2="1165" class="arrow" />
+
+  <!-- 10. End -->
+  <rect x="420" y="1165" width="160" height="40" class="pill" />
+  <text x="500" y="1190" class="node-text" fill="#FFFFFF">Transaksi Selesai</text>
+</svg>

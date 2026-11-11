@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unduh Diagram Presentasi PPT - POS Warung Haji Lubis</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #F8FAFC; color: #1E293B; padding: 32px 20px; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header { background: linear-gradient(135deg, #172554, #1E3A8A); color: white; padding: 28px 32px; border-radius: 16px; margin-bottom: 28px; box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25); }
+    header h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+    header p { font-size: 14.5px; opacity: 0.92; max-width: 850px; }
+    .alert-box { background: #FEF3C7; border-left: 5px solid #F59E0B; padding: 14px 18px; border-radius: 8px; margin-top: 18px; color: #92400E; font-size: 13.5px; }
+    .grid { display: flex; flex-direction: column; gap: 32px; }
+    .card { background: white; border-radius: 16px; border: 1px solid #E2E8F0; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+    .card-header { padding: 18px 24px; border-bottom: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #FAFBFD; }
+    .card-header h2 { font-size: 18px; font-weight: 700; color: #0F172A; }
+    .card-actions { display: flex; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 8px; font-size: 13.5px; font-weight: 600; cursor: pointer; border: none; text-decoration: none; transition: all 0.2s; }
+    .btn-primary { background: #2563EB; color: white; }
+    .btn-primary:hover { background: #1D4ED8; }
+    .btn-secondary { background: #F1F5F9; color: #1E293B; border: 1px solid #CBD5E1; }
+    .btn-secondary:hover { background: #E2E8F0; }
+    .card-body { padding: 24px; background: #F8FAFC; display: flex; justify-content: center; align-items: center; overflow-x: auto; }
+    .svg-wrapper { width: 100%; max-width: 1050px; background: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+    .guide-box { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; padding: 22px; margin-top: 36px; }
+    .guide-box h3 { color: #1E3A8A; font-size: 17px; margin-bottom: 12px; }
+    .guide-box ol { margin-left: 20px; font-size: 14.5px; color: #1E293B; }
+    .guide-box li { margin-bottom: 8px; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; background: #E2E8F0; color: #334155; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Export &amp; Download Diagram Presentasi UTS</h1>
+      <p>Sistem Informasi POS Warung Klontong Haji Lubis. Semua diagram telah di-generate dengan format standar rekayasa perangkat lunak dan siap disematkan ke slide PowerPoint (PPT) maupun laporan UTS Anda.</p>
+      <div class="alert-box">
+        💡 <strong>Kenapa sebelumnya tombol unduh di jendela chat tidak berfungsi?</strong><br/>
+        Panel chat di IDE berjalan di dalam sandbox khusus yang membatasi browser untuk memicu pop-up unduh file OS otomatis.<br/>
+        <strong>Kabar baiknya:</strong> Halaman ini dibuka langsung di web browser Anda (Edge/Chrome), sehingga tombol <strong>"Unduh PNG"</strong> dan <strong>"Unduh SVG"</strong> di bawah ini <strong>100% langsung menyimpan file ke folder Downloads Anda</strong>.
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- 1. FLOWCHART -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2>1. Flowchart: Alur Transaksi Kasir &amp; Hybrid Barcode</h2>
+            <p style="font-size: 13px; color: #64748B;">Mencakup scan kamera/webcam, validasi keranjang, pembayaran tunai, dan cetak struk.</p>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-primary" onclick="exportToPng('svg-flowchart', '1_Flowchart_Transaksi_Kasir_Haji_Lubis.png', 2)">💾 Unduh PNG (Resolusi Tinggi)</button>
+            <button class="btn btn-secondary" onclick="exportToSvg('svg-flowchart', '1_Flowchart_Transaksi_Kasir_Haji_Lubis.svg')">📥 Unduh SVG (Vektor)</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="svg-wrapper" id="svg-flowchart">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #172554; }
+      .subtitle { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; fill: #64748B; }
+      .node-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; font-weight: 600; text-anchor: middle; }
+      .edge-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #475569; }
+      .pill { rx: 25; ry: 25; fill: #1E3A8A; stroke: #172554; stroke-width: 2; }
+      .box { rx: 8; ry: 8; fill: #FFFFFF; stroke: #2563EB; stroke-width: 2; }
+      .box-success { rx: 8; ry: 8; fill: #F0FDF4; stroke: #16A34A; stroke-width: 2; }
+      .diamond { fill: #FEF3C7; stroke: #D97706; stroke-width: 2; }
+      .arrow { stroke: #64748B; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#64748B" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1200" fill="#F8FAFC" rx="16" />
+
+  <!-- Title -->
+  <text x="500" y="45" text-anchor="middle" class="title">FLOWCHART: ALUR TRANSAKSI KASIR &amp; HYBRID BARCODE</text>
+  <text x="500" y="70" text-anchor="middle" class="subtitle">Sistem Informasi POS Warung Klontong Haji Lubis</text>
+
+  <!-- Nodes -->
+  <!-- 1. Start -->
+  <rect x="400" y="100" width="200" height="50" class="pill" />
+  <text x="500" y="131" class="node-text" fill="#FFFFFF">Mulai Transaksi Kasir</text>
+
+  <line x1="500" y1="150" x2="500" y2="190" class="arrow" />
+
+  <!-- 2. Buka Modul POS -->
+  <rect x="380" y="190" width="240" height="55" class="box" />
+  <text x="500" y="215" class="node-text" fill="#172554">Buka Halaman Kasir / POS</text>
+  <text x="500" y="233" class="node-text" fill="#64748B" font-size="11px">(Katalog &amp; Keranjang Belanja)</text>
+
+  <line x1="500" y1="245" x2="500" y2="290" class="arrow" />
+
+  <!-- 3. Pilih Metode Input -->
+  <polygon points="500,290 660,345 500,400 340,345" class="diamond" />
+  <text x="500" y="340" class="node-text" fill="#92400E">Pilih Metode Input</text>
+  <text x="500" y="358" class="node-text" fill="#92400E">Produk Belanja?</text>
+
+  <!-- Branches from Diamond -->
+  <!-- Left: Scan Kamera -->
+  <line x1="340" y1="345" x2="220" y2="345" class="arrow" />
+  <text x="245" y="335" class="edge-text">Produk Kemasan Pabrik</text>
+
+  <rect x="100" y="390" width="240" height="60" class="box" />
+  <text x="220" y="415" class="node-text" fill="#1E40AF">Scan Barcode Kamera</text>
+  <text x="220" y="433" class="node-text" fill="#64748B" font-size="11px">(Kamera HP / Webcam / Beep)</text>
+
+  <!-- Right: Cari Manual -->
+  <line x1="660" y1="345" x2="780" y2="345" class="arrow" />
+  <text x="755" y="335" class="edge-text">Produk Curah / Eceran</text>
+
+  <rect x="660" y="390" width="240" height="60" class="box" />
+  <text x="780" y="415" class="node-text" fill="#1E40AF">Pencarian / Sentuh Kartu</text>
+  <text x="780" y="433" class="node-text" fill="#64748B" font-size="11px">(Ketik Nama / Filter Kategori)</text>
+
+  <!-- Reconnect to Check Stock -->
+  <line x1="220" y1="450" x2="220" y2="490" class="arrow" />
+  <line x1="780" y1="450" x2="780" y2="490" class="arrow" />
+  <line x1="220" y1="490" x2="400" y2="530" class="arrow" />
+  <line x1="780" y1="490" x2="600" y2="530" class="arrow" />
+
+  <!-- 4. Validasi Stok -->
+  <polygon points="500,500 640,545 500,590 360,545" class="diamond" />
+  <text x="500" y="540" class="node-text" fill="#92400E">Cek Ketersediaan</text>
+  <text x="500" y="558" class="node-text" fill="#92400E">Stok &gt; 0?</text>
+
+  <!-- Stock Habis Branch -->
+  <line x1="640" y1="545" x2="880" y2="545" class="arrow" />
+  <text x="720" y="535" class="edge-text">Stok Habis (Tidak)</text>
+  <rect x="880" y="520" width="100" height="50" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" />
+  <text x="930" y="550" class="node-text" fill="#991B1B" font-size="11px">Alert Habis</text>
+
+  <!-- Stock Ada Branch -->
+  <line x1="500" y1="590" x2="500" y2="640" class="arrow" />
+  <text x="510" y="615" class="edge-text">Stok Cukup (Ya)</text>
+
+  <!-- 5. Tambah ke Keranjang -->
+  <rect x="370" y="640" width="260" height="55" class="box" />
+  <text x="500" y="665" class="node-text" fill="#1E40AF">Masuk Keranjang (+1)</text>
+  <text x="500" y="683" class="node-text" fill="#64748B" font-size="11px">Hitung Otomatis Total Belanja</text>
+
+  <line x1="500" y1="695" x2="500" y2="745" class="arrow" />
+
+  <!-- 6. Input Pembayaran -->
+  <rect x="360" y="745" width="280" height="55" class="box" />
+  <text x="500" y="770" class="node-text" fill="#172554">Input Uang Pembayaran (Tunai)</text>
+  <text x="500" y="788" class="node-text" fill="#64748B" font-size="11px">(Tombol Nominal Cepat / Uang Pas)</text>
+
+  <line x1="500" y1="800" x2="500" y2="850" class="arrow" />
+
+  <!-- 7. Validasi Pembayaran -->
+  <polygon points="500,850 650,895 500,940 350,895" class="diamond" />
+  <text x="500" y="890" class="node-text" fill="#92400E">Uang Bayar</text>
+  <text x="500" y="908" class="node-text" fill="#92400E">&gt;= Total Belanja?</text>
+
+  <!-- Bayar Kurang Branch -->
+  <line x1="350" y1="895" x2="180" y2="895" class="arrow" />
+  <text x="210" y="885" class="edge-text">Kurang (Salah)</text>
+  <rect x="60" y="870" width="120" height="50" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" />
+  <text x="120" y="900" class="node-text" fill="#991B1B" font-size="11px">Hitung Kurang</text>
+
+  <!-- Bayar Cukup Branch -->
+  <line x1="500" y1="940" x2="500" y2="990" class="arrow" />
+  <text x="510" y="965" class="edge-text">Cukup (Selesai)</text>
+
+  <!-- 8. Checkout & Otomasi -->
+  <rect x="340" y="990" width="320" height="65" class="box-success" />
+  <text x="500" y="1015" class="node-text" fill="#14532D">1. Potong Stok Produk Otomatis</text>
+  <text x="500" y="1033" class="node-text" fill="#14532D">2. Catat Mutasi Stok &amp; Riwayat Transaksi</text>
+  <text x="500" y="1048" class="node-text" fill="#15803D" font-size="11px">3. Tampilkan Popup Struk Belanja Kasir</text>
+
+  <line x1="500" y1="1055" x2="500" y2="1095" class="arrow" />
+
+  <!-- 9. Struk WhatsApp & Selesai -->
+  <rect x="360" y="1095" width="280" height="45" class="box" />
+  <text x="500" y="1123" class="node-text" fill="#1E40AF">Kirim Struk Digital WhatsApp (Opsional)</text>
+
+  <line x1="500" y1="1140" x2="500" y2="1165" class="arrow" />
+
+  <!-- 10. End -->
+  <rect x="420" y="1165" width="160" height="40" class="pill" />
+  <text x="500" y="1190" class="node-text" fill="#FFFFFF">Transaksi Selesai</text>
+</svg>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. USE CASE -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2>2. Use Case Diagram: Pemisahan Hak Akses (RBAC)</h2>
+            <p style="font-size: 13px; color: #64748B;">Pemisahan fungsi Aktor Kasir (transaksi, cetak) vs Pemilik (laporan laba, stok, manajemen user).</p>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-primary" onclick="exportToPng('svg-usecase', '2_UseCase_Diagram_Haji_Lubis.png', 2)">💾 Unduh PNG (Resolusi Tinggi)</button>
+            <button class="btn btn-secondary" onclick="exportToSvg('svg-usecase', '2_UseCase_Diagram_Haji_Lubis.svg')">📥 Unduh SVG (Vektor)</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="svg-wrapper" id="svg-usecase">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 850" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #172554; }
+      .subtitle { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; fill: #64748B; }
+      .actor-title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: bold; text-anchor: middle; }
+      .actor-sub { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; fill: #64748B; text-anchor: middle; }
+      .uc-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12.5px; font-weight: 600; text-anchor: middle; fill: #172554; }
+      .uc-oval { rx: 120; ry: 24; fill: #FFFFFF; stroke: #2563EB; stroke-width: 1.8; }
+      .uc-oval-owner { rx: 120; ry: 24; fill: #EFF6FF; stroke: #1D4ED8; stroke-width: 1.8; }
+      .line-kasir { stroke: #16A34A; stroke-width: 1.8; stroke-dasharray: 4, 3; }
+      .line-owner { stroke: #2563EB; stroke-width: 1.8; }
+      .system-box { fill: #F8FAFC; stroke: #94A3B8; stroke-width: 2; rx: 16; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="850" fill="#FFFFFF" rx="16" />
+
+  <!-- Title -->
+  <text x="550" y="45" text-anchor="middle" class="title">USE CASE DIAGRAM: PEMISAHAN PERAN (RBAC)</text>
+  <text x="550" y="70" text-anchor="middle" class="subtitle">Sistem Informasi POS Warung Klontong Haji Lubis</text>
+
+  <!-- System Boundary Box -->
+  <rect x="280" y="100" width="540" height="710" class="system-box" />
+  <text x="550" y="128" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14px" font-weight="bold" fill="#0F172A">
+    Batas Sistem (POS Web Warung Haji Lubis)
+  </text>
+
+  <!-- AKTOR KASIR (KIRI) -->
+  <g transform="translate(120, 260)">
+    <!-- Actor Stick Figure -->
+    <circle cx="0" cy="0" r="22" fill="#DCFCE7" stroke="#16A34A" stroke-width="2.5" />
+    <line x1="0" y1="22" x2="0" y2="75" stroke="#16A34A" stroke-width="2.5" />
+    <line x1="-30" y1="40" x2="30" y2="40" stroke="#16A34A" stroke-width="2.5" />
+    <line x1="0" y1="75" x2="-25" y2="120" stroke="#16A34A" stroke-width="2.5" />
+    <line x1="0" y1="75" x2="25" y2="120" stroke="#16A34A" stroke-width="2.5" />
+    <text x="0" y="145" class="actor-title" fill="#15803D">Kasir Toko</text>
+    <text x="0" y="162" class="actor-sub">(Siti Rahma)</text>
+    <rect x="-60" y="172" width="120" height="24" rx="12" fill="#DCFCE7" stroke="#86EFAC" />
+    <text x="0" y="188" font-family="'Segoe UI', Arial, sans-serif" font-size="11px" font-weight="bold" fill="#15803D" text-anchor="middle">Akses Operasional</text>
+  </g>
+
+  <!-- AKTOR PEMILIK / ADMIN (KANAN) -->
+  <g transform="translate(980, 260)">
+    <!-- Actor Stick Figure -->
+    <circle cx="0" cy="0" r="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2.5" />
+    <line x1="0" y1="22" x2="0" y2="75" stroke="#1D4ED8" stroke-width="2.5" />
+    <line x1="-30" y1="40" x2="30" y2="40" stroke="#1D4ED8" stroke-width="2.5" />
+    <line x1="0" y1="75" x2="-25" y2="120" stroke="#1D4ED8" stroke-width="2.5" />
+    <line x1="0" y1="75" x2="25" y2="120" stroke="#1D4ED8" stroke-width="2.5" />
+    <text x="0" y="145" class="actor-title" fill="#1D4ED8">Pemilik / Admin</text>
+    <text x="0" y="162" class="actor-sub">(Haji Lubis)</text>
+    <rect x="-60" y="172" width="120" height="24" rx="12" fill="#DBEAFE" stroke="#93C5FD" />
+    <text x="0" y="188" font-family="'Segoe UI', Arial, sans-serif" font-size="11px" font-weight="bold" fill="#1D4ED8" text-anchor="middle">Akses Penuh (Full)</text>
+  </g>
+
+  <!-- USE CASES (OVALS IN CENTER) -->
+  <!-- 1. Login -->
+  <ellipse cx="550" cy="170" class="uc-oval" />
+  <text x="550" y="175" class="uc-text">UC-01: Login &amp; Pemilihan Peran</text>
+
+  <!-- 2. Transaksi POS -->
+  <ellipse cx="550" cy="225" class="uc-oval" />
+  <text x="550" y="230" class="uc-text">UC-02: Transaksi Kasir &amp; Scan Barcode</text>
+
+  <!-- 3. Struk WA -->
+  <ellipse cx="550" cy="280" class="uc-oval" />
+  <text x="550" y="285" class="uc-text">UC-03: Kirim Struk Digital WhatsApp</text>
+
+  <!-- 4. Katalog Produk -->
+  <ellipse cx="550" cy="335" class="uc-oval" />
+  <text x="550" y="340" class="uc-text">UC-04: Lihat Katalog &amp; Stok Barang</text>
+
+  <!-- 5. Restok Barang Masuk -->
+  <ellipse cx="550" cy="390" class="uc-oval" />
+  <text x="550" y="395" class="uc-text">UC-05: Input Barang Masuk (Restok)</text>
+
+  <!-- 6. Dashboard Ringkasan -->
+  <ellipse cx="550" cy="445" class="uc-oval" />
+  <text x="550" y="450" class="uc-text">UC-06: Monitoring Dashboard &amp; Grafik</text>
+
+  <!-- 7. Laporan Laba Kotor (Owner Only) -->
+  <ellipse cx="550" cy="505" class="uc-oval-owner" />
+  <text x="550" y="510" class="uc-text" fill="#1D4ED8">UC-07: Analisis Estimasi Laba Kotor 👑</text>
+
+  <!-- 8. Pembatalan Transaksi (Owner Only) -->
+  <ellipse cx="550" cy="560" class="uc-oval-owner" />
+  <text x="550" y="565" class="uc-text" fill="#1D4ED8">UC-08: Pembatalan Transaksi Penjualan 👑</text>
+
+  <!-- 9. Stok Opname (Owner Only) -->
+  <ellipse cx="550" cy="615" class="uc-oval-owner" />
+  <text x="550" y="620" class="uc-text" fill="#1D4ED8">UC-09: Penyesuaian Fisik (Stock Opname) 👑</text>
+
+  <!-- 10. WhatsApp Gateway (Owner Only) -->
+  <ellipse cx="550" cy="670" class="uc-oval-owner" />
+  <text x="550" y="675" class="uc-text" fill="#1D4ED8">UC-10: Konfigurasi WhatsApp Gateway 👑</text>
+
+  <!-- 11. Kelola Akun (Owner Only) -->
+  <ellipse cx="550" cy="725" class="uc-oval-owner" />
+  <text x="550" y="730" class="uc-text" fill="#1D4ED8">UC-11: Kelola Akun Kasir &amp; Kata Sandi 👑</text>
+
+  <!-- 12. Audit Log (Owner Only) -->
+  <ellipse cx="550" cy="780" class="uc-oval-owner" />
+  <text x="550" y="785" class="uc-text" fill="#1D4ED8">UC-12: Riwayat Audit Log Sistem 👑</text>
+
+  <!-- LINES FROM KASIR (UC-01 s/d UC-06) -->
+  <line x1="150" y1="280" x2="430" y2="170" class="line-kasir" />
+  <line x1="150" y1="290" x2="430" y2="225" class="line-kasir" />
+  <line x1="150" y1="300" x2="430" y2="280" class="line-kasir" />
+  <line x1="150" y1="310" x2="430" y2="335" class="line-kasir" />
+  <line x1="150" y1="320" x2="430" y2="390" class="line-kasir" />
+  <line x1="150" y1="330" x2="430" y2="445" class="line-kasir" />
+
+  <!-- LINES FROM PEMILIK (ALL USE CASES) -->
+  <line x1="950" y1="280" x2="670" y2="170" class="line-owner" />
+  <line x1="950" y1="290" x2="670" y2="225" class="line-owner" />
+  <line x1="950" y1="300" x2="670" y2="280" class="line-owner" />
+  <line x1="950" y1="310" x2="670" y2="335" class="line-owner" />
+  <line x1="950" y1="320" x2="670" y2="390" class="line-owner" />
+  <line x1="950" y1="330" x2="670" y2="445" class="line-owner" />
+  <line x1="950" y1="340" x2="670" y2="505" class="line-owner" />
+  <line x1="950" y1="350" x2="670" y2="560" class="line-owner" />
+  <line x1="950" y1="360" x2="670" y2="615" class="line-owner" />
+  <line x1="950" y1="370" x2="670" y2="670" class="line-owner" />
+  <line x1="950" y1="380" x2="670" y2="725" class="line-owner" />
+  <line x1="950" y1="390" x2="670" y2="780" class="line-owner" />
+</svg>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. ERD -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2>3. Entity Relationship Diagram (ERD Konseptual)</h2>
+            <p style="font-size: 13px; color: #64748B;">Struktur relasi 7 entitas: Users, Products, Categories, Transactions, TransactionItems, StockLogs, AuditLogs.</p>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-primary" onclick="exportToPng('svg-erd', '3_ERD_Database_Haji_Lubis.png', 2)">💾 Unduh PNG (Resolusi Tinggi)</button>
+            <button class="btn btn-secondary" onclick="exportToSvg('svg-erd', '3_ERD_Database_Haji_Lubis.svg')">📥 Unduh SVG (Vektor)</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="svg-wrapper" id="svg-erd">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #172554; }
+      .subtitle { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; fill: #64748B; }
+      .ent-header { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #FFFFFF; }
+      .ent-attr { font-family: 'Consolas', 'Courier New', monospace; font-size: 12px; fill: #1E293B; }
+      .ent-type { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; fill: #64748B; }
+      .pk { font-weight: bold; fill: #DC2626; }
+      .fk { font-weight: bold; fill: #2563EB; }
+      .box-ent { fill: #FFFFFF; stroke: #CBD5E1; stroke-width: 1.5; rx: 8; }
+      .rel-line { stroke: #64748B; stroke-width: 2; stroke-dasharray: 6, 4; fill: none; }
+      .rel-label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #1E3A8A; background: #FFFFFF; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="880" fill="#F8FAFC" rx="16" />
+
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" class="title">ENTITY RELATIONSHIP DIAGRAM (ERD KONSEPTUAL)</text>
+  <text x="600" y="70" text-anchor="middle" class="subtitle">Skema Relasi Data POS Warung Klontong Haji Lubis</text>
+
+  <!-- 1. ENTITY: USERS (Top Left) -->
+  <g transform="translate(60, 110)">
+    <rect width="250" height="210" class="box-ent" />
+    <path d="M 0,8 Q 0,0 8,0 L 242,0 Q 250,0 250,8 L 250,34 L 0,34 Z" fill="#172554" />
+    <text x="125" y="23" text-anchor="middle" class="ent-header">USERS (Pengguna)</text>
+    <text x="16" y="55" class="ent-attr"><tspan class="pk">PK </tspan>id : string</text>
+    <text x="16" y="77" class="ent-attr">username : string</text>
+    <text x="16" y="99" class="ent-attr">name : string</text>
+    <text x="16" y="121" class="ent-attr">role : enum (Admin|Kasir)</text>
+    <text x="16" y="143" class="ent-attr">email : string</text>
+    <text x="16" y="165" class="ent-attr">phone : string</text>
+    <text x="16" y="187" class="ent-attr">status : string</text>
+  </g>
+
+  <!-- 2. ENTITY: CATEGORIES (Top Middle) -->
+  <g transform="translate(380, 110)">
+    <rect width="200" height="110" class="box-ent" />
+    <path d="M 0,8 Q 0,0 8,0 L 192,0 Q 200,0 200,8 L 200,34 L 0,34 Z" fill="#2563EB" />
+    <text x="100" y="23" text-anchor="middle" class="ent-header">CATEGORIES</text>
+    <text x="16" y="58" class="ent-attr"><tspan class="pk">PK </tspan>name : string</text>
+    <text x="16" y="85" class="ent-attr">description : string</text>
+  </g>
+
+  <!-- 3. ENTITY: PRODUCTS (Top Right) -->
+  <g transform="translate(650, 110)">
+    <rect width="260" height="260" class="box-ent" />
+    <path d="M 0,8 Q 0,0 8,0 L 252,0 Q 260,0 260,8 L 260,34 L 0,34 Z" fill="#1E3A8A" />
+    <text x="130" y="23" text-anchor="middle" class="ent-header">PRODUCTS (Katalog)</text>
+    <text x="16" y="55" class="ent-attr"><tspan class="pk">PK </tspan>id : string</text>
+    <text x="16" y="77" class="ent-attr">code : string</text>
+    <text x="16" y="99" class="ent-attr">barcode : string (EAN-13)</text>
+    <text x="16" y="121" class="ent-attr">name : string</text>
+    <text x="16" y="143" class="ent-attr"><tspan class="fk">FK </tspan>category : string</text>
+    <text x="16" y="165" class="ent-attr">costPrice : integer (IDR)</text>
+    <text x="16" y="187" class="ent-attr">sellingPrice : integer (IDR)</text>
+    <text x="16" y="209" class="ent-attr">stock : integer</text>
+    <text x="16" y="231" class="ent-attr">minStock : integer</text>
+    <text x="16" y="251" class="ent-attr">unit : string</text>
+  </g>
+
+  <!-- 4. ENTITY: STOCK_MUTATIONS (Middle Right) -->
+  <g transform="translate(950, 110)">
+    <rect width="200" height="210" class="box-ent" />
+    <path d="M 0,8 Q 0,0 8,0 L 192,0 Q 200,0 200,8 L 200,34 L 0,34 Z" fill="#0D9488" />
+    <text x="100" y="23" text-anchor="middle" class="ent-header">STOCK_MUTATIONS</text>
+    <text x="14" y="55" class="ent-attr"><tspan class="pk">PK </tspan>id : string</text>
+    <text x="14" y="77" class="ent-attr">time : datetime</text>
+    <text x="14" y="99" class="ent-attr"><tspan class="fk">FK </tspan>productId : string</text>
+    <text x="14" y="121" class="ent-attr">type : enum</text>
+    <text x="14" y="143" class="ent-attr">qty : integer (+/-)</text>
+    <text x="14" y="165" class="ent-attr">finalStock : integer</text>
+    <text x="14" y="187" class="ent-attr">actor : string</text>
+    <text x="14" y="205" class="ent-attr">notes : string</text>
+  </g>
+
+  <!-- 5. ENTITY: TRANSACTIONS (Bottom Middle) -->
+  <g transform="translate(380, 480)">
+    <rect width="260" height="250" class="box-ent" />
+    <path d="M 0,8 Q 0,0 8,0 L 252,0 Q 260,0 260,8 L 260,34 L 0,34 Z" fill="#059669" />
+    <text x="130" y="23" text-anchor="middle" class="ent-header">TRANSACTIONS (Penjualan)</text>
+    <text x="16" y="55" class="ent-attr"><tspan class="pk">PK </tspan>id : string (TRX-...)</text>
+    <text x="16" y="77" class="ent-attr">time : datetime</text>
+    <text x="16" y="99" class="ent-attr">customer : string</text>
+    <text x="16" y="121" class="ent-attr">cashier : string</text>
+    <text x="16" y="143" class="ent-attr">total : integer (IDR)</text>
+    <text x="16" y="165" class="ent-attr">cash : integer (IDR)</text>
+    <text x="16" y="187" class="ent-attr">change : integer (IDR)</text>
+    <text x="16" y="209" class="ent-attr">paymentMethod : string</text>
+    <text x="16" y="231" class="ent-attr">status : enum (Selesai|Batal)</text>
+  </g>
+
+  <!-- 6. ENTITY: TRANSACTION_ITEMS (Bottom Right) -->
+  <g transform="translate(720, 480)">
+    <rect width="240" height="200" class="box-ent" />
+    <path d="M 0,8 Q 0,0 8,0 L 232,0 Q 240,0 240,8 L 240,34 L 0,34 Z" fill="#D97706" />
+    <text x="120" y="23" text-anchor="middle" class="ent-header">TRANSACTION_ITEMS</text>
+    <text x="16" y="55" class="ent-attr"><tspan class="pk">PK </tspan>id : string</text>
+    <text x="16" y="77" class="ent-attr"><tspan class="fk">FK </tspan>transactionId : string</text>
+    <text x="16" y="99" class="ent-attr"><tspan class="fk">FK </tspan>productId : string</text>
+    <text x="16" y="121" class="ent-attr">qty : integer</text>
+    <text x="16" y="143" class="ent-attr">costPrice : integer</text>
+    <text x="16" y="165" class="ent-attr">price : integer</text>
+    <text x="16" y="187" class="ent-attr">subtotal : integer</text>
+  </g>
+
+  <!-- 7. ENTITY: WHATSAPP_LOGS (Bottom Left) -->
+  <g transform="translate(60, 480)">
+    <rect width="250" height="210" class="box-ent" />
+    <path d="M 0,8 Q 0,0 8,0 L 242,0 Q 250,0 250,8 L 250,34 L 0,34 Z" fill="#15803D" />
+    <text x="125" y="23" text-anchor="middle" class="ent-header">WHATSAPP_LOGS</text>
+    <text x="16" y="55" class="ent-attr"><tspan class="pk">PK </tspan>id : string (WA-...)</text>
+    <text x="16" y="77" class="ent-attr">time : datetime</text>
+    <text x="16" y="99" class="ent-attr">type : enum (Struk|Alert|Rekap)</text>
+    <text x="16" y="121" class="ent-attr">recipientName : string</text>
+    <text x="16" y="143" class="ent-attr">recipientPhone : string</text>
+    <text x="16" y="165" class="ent-attr">status : enum (Terkirim|Pending)</text>
+    <text x="16" y="187" class="ent-attr">summary : string</text>
+  </g>
+
+  <!-- RELATIONSHIP LINES -->
+  <!-- Categories -> Products (1 to N) -->
+  <line x1="580" y1="160" x2="650" y2="160" class="rel-line" />
+  <circle cx="585" cy="160" r="3" fill="#64748B" />
+
+  <!-- Products -> Stock Mutations (1 to N) -->
+  <line x1="910" y1="210" x2="950" y2="210" class="rel-line" />
+  <circle cx="915" cy="210" r="3" fill="#64748B" />
+
+  <!-- Transactions -> Transaction Items (1 to N) -->
+  <line x1="640" y1="580" x2="720" y2="580" class="rel-line" />
+  <circle cx="645" cy="580" r="3" fill="#64748B" />
+
+  <!-- Products -> Transaction Items (1 to N) -->
+  <line x1="780" y1="370" x2="780" y2="480" class="rel-line" />
+  <circle cx="780" cy="375" r="3" fill="#64748B" />
+
+  <!-- Transactions -> WhatsApp Logs (1 to N) -->
+  <line x1="380" y1="580" x2="310" y2="580" class="rel-line" />
+  <circle cx="375" cy="580" r="3" fill="#64748B" />
+
+  <!-- Users -> Transactions (1 to N) -->
+  <line x1="185" y1="320" x2="185" y2="410" class="rel-line" />
+  <line x1="185" y1="410" x2="450" y2="410" class="rel-line" />
+  <line x1="450" y1="410" x2="450" y2="480" class="rel-line" />
+  <circle cx="185" cy="325" r="3" fill="#64748B" />
+</svg>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PETUNJUK MEMASUKKAN KE PPT -->
+    <div class="guide-box">
+      <h3>🚀 2 Cara Praktis Memasukkan Diagram ke Slide PowerPoint:</h3>
+      <ol>
+        <li>
+          <strong>Cara 1: Gunakan File yang Sudah Ada di Komputer Anda (Paling Cepat &amp; Hasil Terbaik)</strong><br/>
+          Ketiga file SVG diagram di atas sebenarnya <strong>sudah tersimpan langsung</strong> di folder proyek laptop Anda di:<br/>
+          <code style="background:#DBEAFE; padding:2px 8px; border-radius:4px; font-weight:bold;">C:\latihan 2 prog\SOT_POS_Haji_Lubis</code><br/>
+          Nama filenya: <code>diagram_1_flowchart.svg</code>, <code>diagram_2_usecase.svg</code>, dan <code>diagram_3_erd.svg</code>.<br/>
+          👉 <em>Cukup buka folder tersebut di File Explorer, lalu <strong>seret (drag &amp; drop)</strong> file <code>.svg</code> langsung ke lembar slide PowerPoint Anda! Teks &amp; garisnya akan 100% super tajam / tidak akan buram saat proyektor presentasi UTS.</em>
+        </li>
+        <li>
+          <strong>Cara 2: Klik Tombol "Unduh PNG (Resolusi Tinggi)" di Atas</strong><br/>
+          Jika PowerPoint Anda versi lama atau Anda lebih suka format gambar PNG, klik tombol biru <strong>"💾 Unduh PNG (Resolusi Tinggi)"</strong> pada masing-masing diagram di atas. Browser akan otomatis mengunduh file gambar PNG dengan resolusi 2x lipat (sangat tajam untuk PPT).
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    function exportToSvg(containerId, filename) {
+      const container = document.getElementById(containerId);
+      const svg = container.querySelector('svg');
+      const serializer = new XMLSerializer();
+      let source = serializer.serializeToString(svg);
+      
+      if (!source.match(/^<svg[^>]+xmlns="http:\/\/www\.w3\.org\/2000\/svg"/)) {
+        source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+      }
+
+      const blob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function exportToPng(containerId, filename, scale = 2) {
+      const container = document.getElementById(containerId);
+      const svg = container.querySelector('svg');
+      const serializer = new XMLSerializer();
+      let source = serializer.serializeToString(svg);
+
+      if (!source.match(/^<svg[^>]+xmlns="http:\/\/www\.w3\.org\/2000\/svg"/)) {
+        source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+      }
+
+      const viewBox = svg.viewBox.baseVal;
+      const width = (viewBox && viewBox.width) ? viewBox.width : (svg.clientWidth || 1000);
+      const height = (viewBox && viewBox.height) ? viewBox.height : (svg.clientHeight || 800);
+
+      const canvas = document.createElement('canvas');
+      canvas.width = width * scale;
+      canvas.height = height * scale;
+      const ctx = canvas.getContext('2d');
+
+      const img = new Image();
+      const svgBlob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(svgBlob);
+
+      img.onload = function() {
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        URL.revokeObjectURL(url);
+
+        canvas.toBlob(function(blob) {
+          const pngUrl = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = pngUrl;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(() => URL.revokeObjectURL(pngUrl), 2000);
+        }, 'image/png');
+      };
+
+      img.src = url;
+    }
+  </script>
+</body>
+</html>

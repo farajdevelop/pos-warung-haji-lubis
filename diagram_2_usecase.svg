@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 850" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #172554; }
+      .subtitle { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; fill: #64748B; }
+      .actor-title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: bold; text-anchor: middle; }
+      .actor-sub { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; fill: #64748B; text-anchor: middle; }
+      .uc-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12.5px; font-weight: 600; text-anchor: middle; fill: #172554; }
+      .uc-oval { rx: 120; ry: 24; fill: #FFFFFF; stroke: #2563EB; stroke-width: 1.8; }
+      .uc-oval-owner { rx: 120; ry: 24; fill: #EFF6FF; stroke: #1D4ED8; stroke-width: 1.8; }
+      .line-kasir { stroke: #16A34A; stroke-width: 1.8; stroke-dasharray: 4, 3; }
+      .line-owner { stroke: #2563EB; stroke-width: 1.8; }
+      .system-box { fill: #F8FAFC; stroke: #94A3B8; stroke-width: 2; rx: 16; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="850" fill="#FFFFFF" rx="16" />
+
+  <!-- Title -->
+  <text x="550" y="45" text-anchor="middle" class="title">USE CASE DIAGRAM: PEMISAHAN PERAN (RBAC)</text>
+  <text x="550" y="70" text-anchor="middle" class="subtitle">Sistem Informasi POS Warung Klontong Haji Lubis</text>
+
+  <!-- System Boundary Box -->
+  <rect x="280" y="100" width="540" height="710" class="system-box" />
+  <text x="550" y="128" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14px" font-weight="bold" fill="#0F172A">
+    Batas Sistem (POS Web Warung Haji Lubis)
+  </text>
+
+  <!-- AKTOR KASIR (KIRI) -->
+  <g transform="translate(120, 260)">
+    <!-- Actor Stick Figure -->
+    <circle cx="0" cy="0" r="22" fill="#DCFCE7" stroke="#16A34A" stroke-width="2.5" />
+    <line x1="0" y1="22" x2="0" y2="75" stroke="#16A34A" stroke-width="2.5" />
+    <line x1="-30" y1="40" x2="30" y2="40" stroke="#16A34A" stroke-width="2.5" />
+    <line x1="0" y1="75" x2="-25" y2="120" stroke="#16A34A" stroke-width="2.5" />
+    <line x1="0" y1="75" x2="25" y2="120" stroke="#16A34A" stroke-width="2.5" />
+    <text x="0" y="145" class="actor-title" fill="#15803D">Kasir Toko</text>
+    <text x="0" y="162" class="actor-sub">(Siti Rahma)</text>
+    <rect x="-60" y="172" width="120" height="24" rx="12" fill="#DCFCE7" stroke="#86EFAC" />
+    <text x="0" y="188" font-family="'Segoe UI', Arial, sans-serif" font-size="11px" font-weight="bold" fill="#15803D" text-anchor="middle">Akses Operasional</text>
+  </g>
+
+  <!-- AKTOR PEMILIK / ADMIN (KANAN) -->
+  <g transform="translate(980, 260)">
+    <!-- Actor Stick Figure -->
+    <circle cx="0" cy="0" r="22" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2.5" />
+    <line x1="0" y1="22" x2="0" y2="75" stroke="#1D4ED8" stroke-width="2.5" />
+    <line x1="-30" y1="40" x2="30" y2="40" stroke="#1D4ED8" stroke-width="2.5" />
+    <line x1="0" y1="75" x2="-25" y2="120" stroke="#1D4ED8" stroke-width="2.5" />
+    <line x1="0" y1="75" x2="25" y2="120" stroke="#1D4ED8" stroke-width="2.5" />
+    <text x="0" y="145" class="actor-title" fill="#1D4ED8">Pemilik / Admin</text>
+    <text x="0" y="162" class="actor-sub">(Haji Lubis)</text>
+    <rect x="-60" y="172" width="120" height="24" rx="12" fill="#DBEAFE" stroke="#93C5FD" />
+    <text x="0" y="188" font-family="'Segoe UI', Arial, sans-serif" font-size="11px" font-weight="bold" fill="#1D4ED8" text-anchor="middle">Akses Penuh (Full)</text>
+  </g>
+
+  <!-- USE CASES (OVALS IN CENTER) -->
+  <!-- 1. Login -->
+  <ellipse cx="550" cy="170" class="uc-oval" />
+  <text x="550" y="175" class="uc-text">UC-01: Login &amp; Pemilihan Peran</text>
+
+  <!-- 2. Transaksi POS -->
+  <ellipse cx="550" cy="225" class="uc-oval" />
+  <text x="550" y="230" class="uc-text">UC-02: Transaksi Kasir &amp; Scan Barcode</text>
+
+  <!-- 3. Struk WA -->
+  <ellipse cx="550" cy="280" class="uc-oval" />
+  <text x="550" y="285" class="uc-text">UC-03: Kirim Struk Digital WhatsApp</text>
+
+  <!-- 4. Katalog Produk -->
+  <ellipse cx="550" cy="335" class="uc-oval" />
+  <text x="550" y="340" class="uc-text">UC-04: Lihat Katalog &amp; Stok Barang</text>
+
+  <!-- 5. Restok Barang Masuk -->
+  <ellipse cx="550" cy="390" class="uc-oval" />
+  <text x="550" y="395" class="uc-text">UC-05: Input Barang Masuk (Restok)</text>
+
+  <!-- 6. Dashboard Ringkasan -->
+  <ellipse cx="550" cy="445" class="uc-oval" />
+  <text x="550" y="450" class="uc-text">UC-06: Monitoring Dashboard &amp; Grafik</text>
+
+  <!-- 7. Laporan Laba Kotor (Owner Only) -->
+  <ellipse cx="550" cy="505" class="uc-oval-owner" />
+  <text x="550" y="510" class="uc-text" fill="#1D4ED8">UC-07: Analisis Estimasi Laba Kotor 👑</text>
+
+  <!-- 8. Pembatalan Transaksi (Owner Only) -->
+  <ellipse cx="550" cy="560" class="uc-oval-owner" />
+  <text x="550" y="565" class="uc-text" fill="#1D4ED8">UC-08: Pembatalan Transaksi Penjualan 👑</text>
+
+  <!-- 9. Stok Opname (Owner Only) -->
+  <ellipse cx="550" cy="615" class="uc-oval-owner" />
+  <text x="550" y="620" class="uc-text" fill="#1D4ED8">UC-09: Penyesuaian Fisik (Stock Opname) 👑</text>
+
+  <!-- 10. WhatsApp Gateway (Owner Only) -->
+  <ellipse cx="550" cy="670" class="uc-oval-owner" />
+  <text x="550" y="675" class="uc-text" fill="#1D4ED8">UC-10: Konfigurasi WhatsApp Gateway 👑</text>
+
+  <!-- 11. Kelola Akun (Owner Only) -->
+  <ellipse cx="550" cy="725" class="uc-oval-owner" />
+  <text x="550" y="730" class="uc-text" fill="#1D4ED8">UC-11: Kelola Akun Kasir &amp; Kata Sandi 👑</text>
+
+  <!-- 12. Audit Log (Owner Only) -->
+  <ellipse cx="550" cy="780" class="uc-oval-owner" />
+  <text x="550" y="785" class="uc-text" fill="#1D4ED8">UC-12: Riwayat Audit Log Sistem 👑</text>
+
+  <!-- LINES FROM KASIR (UC-01 s/d UC-06) -->
+  <line x1="150" y1="280" x2="430" y2="170" class="line-kasir" />
+  <line x1="150" y1="290" x2="430" y2="225" class="line-kasir" />
+  <line x1="150" y1="300" x2="430" y2="280" class="line-kasir" />
+  <line x1="150" y1="310" x2="430" y2="335" class="line-kasir" />
+  <line x1="150" y1="320" x2="430" y2="390" class="line-kasir" />
+  <line x1="150" y1="330" x2="430" y2="445" class="line-kasir" />
+
+  <!-- LINES FROM PEMILIK (ALL USE CASES) -->
+  <line x1="950" y1="280" x2="670" y2="170" class="line-owner" />
+  <line x1="950" y1="290" x2="670" y2="225" class="line-owner" />
+  <line x1="950" y1="300" x2="670" y2="280" class="line-owner" />
+  <line x1="950" y1="310" x2="670" y2="335" class="line-owner" />
+  <line x1="950" y1="320" x2="670" y2="390" class="line-owner" />
+  <line x1="950" y1="330" x2="670" y2="445" class="line-owner" />
+  <line x1="950" y1="340" x2="670" y2="505" class="line-owner" />
+  <line x1="950" y1="350" x2="670" y2="560" class="line-owner" />
+  <line x1="950" y1="360" x2="670" y2="615" class="line-owner" />
+  <line x1="950" y1="370" x2="670" y2="670" class="line-owner" />
+  <line x1="950" y1="380" x2="670" y2="725" class="line-owner" />
+  <line x1="950" y1="390" x2="670" y2="780" class="line-owner" />
+</svg>
